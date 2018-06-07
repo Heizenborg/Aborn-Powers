@@ -1,7 +1,7 @@
 <template>
   <v-app id="management">
-    <v-toolbar>
-      <v-toolbar-title>Property Management Portal</v-toolbar-title>
+    <v-toolbar color="red darken-4 white--text">
+      <v-toolbar-title color="#fff">Property Management Portal</v-toolbar-title>
     </v-toolbar>
     <v-container fluid><!--fluid makes the container full screen-->
       <router-view/><!--loads the components SPA style look at router/index.js for component and url management-->
@@ -18,11 +18,11 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #fff;
   margin-top: 60px;
 }
 </style>
