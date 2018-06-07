@@ -2,7 +2,7 @@
     <v-layout row wrap>
       <!-- LEFT Box-->
       <v-flex xs12 sm5 style="box-shadow: 3px 3px 8px grey;">
-         <v-toolbar flat>
+         <v-toolbar flat color="red darken-4 white--text">
          <v-toolbar-title>Account Information</v-toolbar-title>
         </v-toolbar>
         <div class="account-container">
@@ -14,7 +14,7 @@
 
       <!-- RIGHT Box-->
       <v-flex xs12 sm5 style="box-shadow: 3px 3px 8px grey;">
-         <v-toolbar flat>
+         <v-toolbar flat color="red darken-4 white--text">
         <v-toolbar-title>Map</v-toolbar-title>
         </v-toolbar>
          <div class="account-container">
