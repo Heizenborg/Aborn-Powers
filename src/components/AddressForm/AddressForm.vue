@@ -1,7 +1,7 @@
 <template>
   <div class="form-holder-outter">
       <div class="form-holder-inner">
-        <v-toolbar>
+        <v-toolbar color="red darken-4 white--text">
         <v-toolbar-title>Account Information</v-toolbar-title>
         </v-toolbar>
         <v-layout row>
@@ -28,7 +28,7 @@
 
         <v-spacer></v-spacer>
         <!--ADDRESS INFORMATION -->
-        <v-toolbar>
+        <v-toolbar color="red darken-4 white--text">
           <v-toolbar-title>Address Information</v-toolbar-title>
         </v-toolbar>
 
@@ -93,7 +93,7 @@
     <v-layout row>
       <v-flex xs12 sm4 offset-sm8 text-xs-center>
         <div style="margin-bottom:20px;">
-          <v-btn>Add New Account</v-btn>
+          <v-btn @click="addNewAccount()">Add New Account</v-btn>
         </div>
       </v-flex>
     </v-layout>
@@ -122,7 +122,12 @@
            city:'',
            state:'',
            zip:''
-         })
+         }),
+        methods:{
+          addNewAccount:function(){
+            window.location="#/Account_Details"
+          }
+        }
 
     }
 </script>
