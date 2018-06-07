@@ -1,7 +1,7 @@
 <template>
     <v-layout row wrap>
       <!-- LEFT Box-->
-      <v-flex xs12 sm5 style="box-shadow: 3px 3px 8px grey;">
+      <v-flex xs12 sm4 style="box-shadow: 3px 3px 8px grey;">
          <v-toolbar flat color="red darken-4 white--text">
          <v-toolbar-title>Account Information</v-toolbar-title>
         </v-toolbar>
@@ -10,10 +10,10 @@
          </div>
       </v-flex>
 
-      <v-flex xs12 sm1 md2 ></v-flex>
+      <v-flex xs12 sm1 md1 ></v-flex>
 
       <!-- RIGHT Box-->
-      <v-flex xs12 sm5 style="box-shadow: 3px 3px 8px grey;">
+      <v-flex xs12 sm7 style="box-shadow: 3px 3px 8px grey;">
          <v-toolbar flat color="red darken-4 white--text">
         <v-toolbar-title>Map</v-toolbar-title>
         </v-toolbar>
