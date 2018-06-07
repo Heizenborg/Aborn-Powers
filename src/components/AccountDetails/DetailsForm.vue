@@ -100,6 +100,7 @@
         methods:{
           toggleEdit:function(){
             this.formLocked = !this.formLocked;
+            this.required = !this.required;
           }
         }
     }
