@@ -6,7 +6,15 @@
          <v-toolbar-title>Account Information</v-toolbar-title>
         </v-toolbar>
         <div class="account-container">
-          <DetailsForm></DetailsForm>
+          <DetailsForm
+          :name="name"
+          :account="account"
+          :street1="street1"
+          :street2="street2"
+          :city="city"
+          :state="state"
+          :zip="zip"
+          ></DetailsForm>
          </div>
       </v-flex>
 
@@ -18,7 +26,7 @@
         <v-toolbar-title>Map</v-toolbar-title>
         </v-toolbar>
          <div class="account-container">
-            <GoogleMap name="testing"></GoogleMap>
+            <GoogleMap name="testing" :latitude="latitude" :longitude="longitude"></GoogleMap>
          </div>
       </v-flex>
     </v-layout>
@@ -29,7 +37,28 @@
   import DetailsForm from './DetailsForm';
     export default {
         name: "AccountDetails",
-      components: {DetailsForm, GoogleMap}
+      components: {DetailsForm, GoogleMap},
+      data:()=>({
+          name:'John Doe',
+          account:'1001234',
+          street1:'123 Main Street',
+          street2:'Apartment 2b',
+          city:'El Dorado Hills',
+          state:'California',
+          zip:'95762',
+          latitude:'38.685737',
+          longitude:'-121.082167',
+
+        }),
+      computed:{
+          account2(){
+            return this.$store.state.account;
+          }
+
+      },
+      mounted: function(){
+          console.log(this.account2);
+      }
     }
 </script>
 

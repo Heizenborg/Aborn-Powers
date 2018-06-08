@@ -86,16 +86,10 @@
 <script>
     export default {
         name: "DetailsForm",
-        data:()=>({
-          name:'John Doe',
-          account:'1001234',
-          street1:'123 Main Street',
-          street2:'Apartment 2b',
-           city:'Sacramento',
-           state:'California',
-           zip:'95962',
-          formLocked:true,
-          required:false
+        props:['name','account', 'street1','street2','city','state','zip'],
+      data:()=>({
+           formLocked:true,
+           required:false,
         }),
         methods:{
           toggleEdit:function(){
