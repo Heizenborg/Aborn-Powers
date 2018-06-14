@@ -11,8 +11,9 @@
               <div style="height:50px;"></div>
               <v-card-text>
 
-
-
+                <Result/>
+                <Result/>
+                <Result/>
 
               </v-card-text>
             </v-card>
@@ -23,9 +24,10 @@
 </template>
 
 <script>
-
+  import Result from './Result';
     export default {
         name: "SearchResults",
+      components:{Result}
 
     }
 </script>

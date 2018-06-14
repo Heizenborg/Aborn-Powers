@@ -152,12 +152,7 @@
             let coords = {
               latitude: '',
               longitude: ''
-            };/*
-            let address = account.street1 + "+" + account.city + "+" + account.state;
-            let url= 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-            let lookup_coords = fetch(url+address + "&key=" + key).then((resp) => resp.json());
-
-            console.log("lookup:",lookup_coords);*/
+            };
 
             let geocoder = new google.maps.Geocoder();
 

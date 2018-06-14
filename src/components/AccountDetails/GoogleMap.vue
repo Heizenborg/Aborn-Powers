@@ -6,15 +6,12 @@
   export default {
     //props: ['latitude', 'longitude'],
     mounted: function () {
-      console.log("mounted");
       let latitude = parseFloat(this.$store.state.account.latitude);
-      let longitude = parseFLoat(this.$store.state.longitude);
-
-      console.log("latitude:", latitude);
+      let longitude = parseFloat(this.$store.state.account.longitude);
 
       let map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: latitude, lng: longitude},
-        zoom: 14
+        zoom: 15
       });
     }
   }

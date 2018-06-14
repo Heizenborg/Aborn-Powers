@@ -17,7 +17,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="red darken-4 white--text">Search</v-btn>
+                <v-btn color="red darken-4 white--text" @click="searchAccounts()">Search</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -28,7 +28,12 @@
 
 <script>
     export default {
-        name: "TenantSearch"
+        name: "TenantSearch",
+      methods:{
+          searchAccounts:function(){
+            window.location = "/#/SearchResults"
+          }
+      }
     }
 </script>
 
