@@ -98,10 +98,10 @@
       </v-flex>
     </v-layout>
   </div>
-  </div>
 </template>
 
 <script>
+   import 'google-maps';
     export default {
         name: "AddressForm",
          data: () => ({
@@ -123,9 +123,60 @@
            state:'',
            zip:''
          }),
-        methods:{
-          addNewAccount:function(){
-            window.location="#/Account_Details"
+      computed:{
+          store(){
+            return this.$store;
+          }
+      },
+        methods: {
+          addNewAccount: function () {
+            //let key = 'AIzaSyCVFSIAGDYqU8QKuxcsrg8-rVpSFUaWBG0';
+            let account = {
+              name: this.name,
+              account: this.account,
+              street1: this.street1,
+              street2: this.street2,
+              city: this.city,
+              state: this.state,
+              zip: this.zip,
+              lat: '',
+              long: ''
+            };
+            let coords = this.getLatLong(account, this.$store);
+
+            //window.location="#/Account_Details"
+          },
+          getLatLong: function (account, store) {
+            console.log("Calling coordinates");
+            let key = 'AIzaSyCVFSIAGDYqU8QKuxcsrg8-rVpSFUaWBG0';
+            let coords = {
+              latitude: '',
+              longitude: ''
+            };/*
+            let address = account.street1 + "+" + account.city + "+" + account.state;
+            let url= 'https://maps.googleapis.com/maps/api/geocode/json?address=';
+            let lookup_coords = fetch(url+address + "&key=" + key).then((resp) => resp.json());
+
+            console.log("lookup:",lookup_coords);*/
+
+            let geocoder = new google.maps.Geocoder();
+
+            let address = account.street1 + "+" + account.city + "+" + account.state;
+            geocoder.geocode({'address': address}, function (results, status) {
+              if (status === 'OK') {
+                account.lat = results[0].geometry.bounds.b.b;
+                account.long = results[0].geometry.bounds.f.f;
+              } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+              }
+
+              store.commit('changeAccount', account);
+              console.log("account:",account);
+              window.location="#/Account_Details";
+
+
+            });
+
           }
         }
 

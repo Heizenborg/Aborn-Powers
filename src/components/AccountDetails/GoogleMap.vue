@@ -3,25 +3,22 @@
 </template>
 
 <script>
-  import GoogleMapsLoader from 'google-maps'
   export default {
-    props:['latitude', 'longitude'],
+    //props: ['latitude', 'longitude'],
+    mounted: function () {
+      console.log("mounted");
+      let latitude = parseFloat(this.$store.state.account.latitude);
+      let longitude = parseFLoat(this.$store.state.longitude);
 
-  mounted: function () {
-      console.log(this.latitude);
-      let latitude=parseFloat(this.latitude);
-      let longitude=parseFloat(this.longitude);
-    GoogleMapsLoader.KEY = 'AIzaSyCVFSIAGDYqU8QKuxcsrg8-rVpSFUaWBG0';
-    GoogleMapsLoader.load(function(google) {
-      let options = {
-        zoom: 8,
-        center:{ lat: latitude, lng: longitude }
-      };
+      console.log("latitude:", latitude);
 
-      let map = new google.maps.Map(document.getElementById('map'), options);
-    });
+      let map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: latitude, lng: longitude},
+        zoom: 14
+      });
+    }
   }
-}
+
 </script>
 
 <style scoped>

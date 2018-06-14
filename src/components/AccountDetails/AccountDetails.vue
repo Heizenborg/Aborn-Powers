@@ -26,7 +26,7 @@
         <v-toolbar-title>Map</v-toolbar-title>
         </v-toolbar>
          <div class="account-container">
-            <GoogleMap name="testing" :latitude="latitude" :longitude="longitude"></GoogleMap>
+            <GoogleMap></GoogleMap>
          </div>
       </v-flex>
     </v-layout>
@@ -38,26 +38,40 @@
     export default {
         name: "AccountDetails",
       components: {DetailsForm, GoogleMap},
-      data:()=>({
-          name:'John Doe',
-          account:'1001234',
-          street1:'123 Main Street',
-          street2:'Apartment 2b',
-          city:'El Dorado Hills',
-          state:'California',
-          zip:'95762',
-          latitude:'38.685737',
-          longitude:'-121.082167',
-
-        }),
       computed:{
-          account2(){
+          account(){
             return this.$store.state.account;
-          }
-
+          },
+          name(){
+            return this.$store.state.account.name;
+          },
+          account(){
+            return this.$store.state.account.account;
+          },
+          street1(){
+            return this.$store.state.account.street1;
+          },
+          street2(){
+            return this.$store.state.account.street2;
+          },
+          city(){
+            return this.$store.state.account.city;
+          },
+          state(){
+            return this.$store.state.account.state;
+          },
+          zip(){
+            return this.$store.state.account.zip;
+          },
+          /*latitude(){
+            return this.$store.state.account.latitude;
+          },
+        longitude(){
+            return this.$store.state.account.longitude;
+        }*/
       },
       mounted: function(){
-          console.log(this.account2);
+          console.log("mounted",this.$store.state.account);
       }
     }
 </script>
